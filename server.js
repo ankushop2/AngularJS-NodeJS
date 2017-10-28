@@ -20,13 +20,15 @@ app.post('/server', function(req, res, next){
     var a=req.body.Username;
     var b=req.body.Password;
     //var data = req.body.params;
-    var q = "insert into Users (Username, Password) values (\'"+a+"\','"+b+"\')";
+    //var q = "insert into Users (Username, Password) values (\'"+a+"\','"+b+"\')";
+    var q = "select * from Users where Username=\""+a+"\"";
     var query = connection.query(q,function(err, result) {
      if (err) {
        console.error(err);
-       return res.send(err);
+       res.send(err);
      } else {
-       return res.send('Ok');
+       console.log(result);
+       res.send(result);
      }
     });
 });
