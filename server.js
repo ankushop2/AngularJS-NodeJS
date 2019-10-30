@@ -6,7 +6,7 @@ var bodyParser =    require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(express.static(__dirname));
-
+//ADDED A COMMENT
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'vishal',
